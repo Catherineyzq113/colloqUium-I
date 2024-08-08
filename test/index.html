@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>水平滚动示例</title>
+    <title>finalwebite</title>
     
-<!-- 链接 CSS 文件 -->
+
 <link rel="stylesheet" href="styles.css">
     
-<!-- 引入 GSAP 库 -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/scrollama"></script>
 
-<!-- 链接 JavaScript 文件 -->
+
 <script src="script.js" defer></script>
 </head>
 <body>
@@ -21,12 +22,39 @@
     <div class="firstContainer">
 
             <h1>Click the screen</h1>
-
+            <img id="flower-image" alt="Tulip">
             <footer>
-            <button class="clear-btn">Clear</button>
+            <!-- <button class="clear-btn">Clear</button> -->
             </footer>
     </div>
 
+    <div id="container" class="container-0 graph-scroll-fixed">
+        <div id="graph" class="diagram-container sticky">
+        <svg class="pudding-chart" id="dist_diag" width="630" height="534">
+            <g class="g-axis"></g>
+            <g class="g-vis" transform="translate(20, 20)">
+                <image xlink:href="./assets/images/artist_neon.png" class="logo-artist" width="100" height="100" x="0" y="187""></image>
+                <image xlink:href="./assets/images/apple_neon.png" class="logo-apple" width="100" height="100" x="480" y="187"></image>
+                <image xlink:href="./assets/images/lable_neon.png" id="dist_image" class="logo-label" width="100" height="100" x="260" y="187" style="opacity: 0;"></image>
+                <image xlink:href="./assets/images/artist_neon.png" class="logo-artist-2" width="100" height="100" x="0" y="349" style="opacity: 0;"></image>
+                <image xlink:href="./assets/images/artist_neon.png" class="logo-artist-3" width="100" height="100" x="0" y="511" style="opacity: 0;"></image>
+            
+                <text text-anchor="middle" dominant-baseline="central" id="dist_text" style="opacity: 0;" x="310" y="312">Dist / Label</text>
+                <svg width="600" height="400">
+                    <text text-anchor="middle" dominant-baseline="central" id="artist_text" x="50" y="312">Fraudster</text>
+                    <text text-anchor="middle" dominant-baseline="central" id="streamers_text" x="530" y="312">Target</text>
+                </svg>
+                <g id="music_notes">
+                    <image xlink:href="./assets/images/note_neon.png" class="music-note note-apple" width="50" height="50" x="100" y="162"></image>
+                    <image xlink:href="./assets/images/note_neon.png" class="music-note note-info" width="50" height="50" x="100" y="262"></image>
+                    </g>
+        </svg>
+    </div>
+    <div class="customerjourney">
+        <div class="step" data-step="1">Place holder</div>
+ 
+      </div>
+</div>
 
     <div class="globeContainer">
         <iframe src="http://127.0.0.1:5503/colloquium%20i%20Catherine%20Ye%202/interactiveglobe/indexfinal.html" frameborder="0" width="100%" height="500px"></iframe>

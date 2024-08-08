@@ -30,8 +30,30 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: rgb(37, 37, 37);
+  background: rgb(0, 0, 0);
   position: relative;
+}
+
+.diagram-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300vh;
+  background: rgb(0, 0, 0);
+  font-family: "Abril Fatface", cursive;
+  font-size: 2em;
+  font-style: italic;
+  color: #aaa3a3;
+}
+
+.customerjourney {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(0, 0, 0);
 }
 
 .globeContainer {
@@ -39,20 +61,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 500vh;
-  background: rgb(37, 37, 37);
+  height: 100vh;
+  background: rgb(0, 0, 0);
   position: relative;
 }
 
 .globeContainer iframe {
-  width: 100%;
-  height: 100px;
+  width: 80%;
+  height: 900px;
   border: none;
 }
 
 .container {
   width: 300vw;
-  height: 500vh;
+  height: 100vh;
   display: flex;
   flex-wrap: nowrap;
 }
@@ -87,6 +109,13 @@ h1 {
   pointer-events: none;
 }
 
+#artist_text, #streamers_text {
+  fill: rgb(243, 243, 243); /* Light grey color for the text */
+  font-size: 24px; /* Adjust font size as needed */
+  opacity: 0.25;
+  pointer-events: none;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -109,22 +138,56 @@ img:hover {
   z-index: 10;
 }
 
-.clear-btn {
-  color: white;
-  background-color: #f15b31;
-  border-radius: 20px;
-  width: 100px;
-  height: 30px;
-  text-align: center;
-  border: none;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  z-index: 100;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+
+
+
+@keyframes moveNoteApple {
+    0% { transform: translate(0, 0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translate(370px, 0); opacity: 0; }
 }
 
-.clear-btn:hover {
-  color: black;
+@keyframes moveNoteInfo {
+    0% { transform: translate(370px, 0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0; }
 }
+
+.note-apple, .note-info {
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.note-apple {
+    animation-name: moveNoteApple;
+}
+
+.note-info {
+    animation-name: moveNoteInfo;
+}
+
+.fixed-logo {
+    position: fixed;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.logo-artist-2, .logo-artist-3 {
+    transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes moveNote {
+    0% { transform: translate(0, 0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translate(370px, 137px); opacity: 0; }
+}
+
+.moving-note {
+    animation: moveNote 4s linear infinite;
+    animation-play-state: paused;
+}
+
