@@ -92,3 +92,41 @@ btn.addEventListener("click", () => {
   console.log("clicked");
   firstContainer.innerHTML = "<h1>Click the screen</h1><footer><button class='clear-btn'>Clear</button></footer>";
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const scroller = scrollama();
+  let currentGraph = null;
+  
+  scroller
+    .setup({
+      step: ".step",
+    })
+    .onStepEnter((response) => {
+      const graphId = response.element.dataset.graph;
+      const graphElement = document.getElementById(graphId);
+  
+      if (currentGraph !== null && currentGraph !== graphElement) {
+        hideGraph(currentGraph);
+      }
+      
+      showGraph(graphElement, graphId);
+      currentGraph = graphElement;
+    });
+  
+  function hideGraph(element) {
+    gsap.to(element, { autoAlpha: 0, duration: 0.5 });
+  }
+  
+  function showGraph(element, graphId) {
+    if (graphId === 'graph1') {
+      element.style.display = 'block';
+    } else {
+      gsap.fromTo(
+        element,
+        { autoAlpha: 0, y: "2rem" },
+        { autoAlpha: 1, y: "0rem", duration: 0.5 }
+      );
+    }
+  }
+});

@@ -29,33 +29,65 @@
     </div>
 
     <div id="container" class="container-0 graph-scroll-fixed">
-        <div id="graph" class="diagram-container sticky">
+
+        <div id="graph" class="diagram-container">
+            <div class="floating-explanation" id="explanation-1">
+                <h3>Initial Compromise:</h3>
+                <p>Phishing Emails: AI-generated phishing emails are sent to employees of a target organization, leading to the compromise of email accounts.</p>
+                <p>Reconnaissance: AI analyzes the compromised accounts to gather information on organizational hierarchies, payment processes, and typical email content.</p>
+            </div>
+            <div class="floating-explanation" id="explanation-2">
+                <h3>Preparation:</h3>
+                <p>Profile Building: AI builds detailed profiles of key individuals, such as finance managers and executives.</p>
+                <p>Deepfake Creation: Deepfake audio or video files are created to impersonate these individuals if necessary.</p>
+            </div>
+            <div class="floating-explanation" id="explanation-3">
+                <h3>Execution:</h3>
+                <p>Email Crafting: AI crafts and sends convincing emails from the compromised accounts or from spoofed accounts that look nearly identical to legitimate ones.</p>
+                <p>Fraudulent Instructions: These emails contain instructions for unauthorized money transfers, often disguised as urgent business transactions or legitimate requests.</p>
+            </div>
+            <div class="floating-explanation" id="explanation-4">
+                <h3>Adaptation and Persistence:</h3>
+                <p>Monitoring Responses: AI monitors the responses and adapts the messaging in real-time to overcome any doubts or resistance from the target.</p>
+                <p>Continued Exploitation: If the initial attempt is successful, AI continues to exploit the compromised accounts to execute additional fraudulent transactions or to compromise further accounts within the organization.</p>
+            </div>
+            <div class="floating-explanation" id="explanation-5">
+                <h3>Final Exploitation:</h3>
+                <p>Money Transfers: The target, believing the instructions to be legitimate, authorizes the money transfer to the fraudster’s account.</p>
+                <p>Follow-up Fraud: AI may continue to exploit the compromised email accounts to initiate additional fraudulent transactions or to further infiltrate the organization.</p>
+            </div>
+            <div class="floating-explanation" id="explanation-6">
+                <h3>Covering Tracks:</h3>
+                <p>Deleting Evidence: AI may automate the deletion of fraudulent emails and other evidence from compromised accounts to delay detection.</p>
+                <p>Spreading Confusion: AI could send follow-up emails or messages that create confusion and misdirect investigations.</p>
+            </div>
         <svg class="pudding-chart" id="dist_diag" width="630" height="534">
             <g class="g-axis"></g>
             <g class="g-vis" transform="translate(20, 20)">
                 <image xlink:href="./assets/images/artist_neon.png" class="logo-artist" width="100" height="100" x="0" y="187""></image>
+                <image xlink:href="./assets/images/spotify_neon.png" class="logo-spotify" width="100" height="100" x="480" y="25"></image>
                 <image xlink:href="./assets/images/apple_neon.png" class="logo-apple" width="100" height="100" x="480" y="187"></image>
+                <image xlink:href="./assets/images/deezer_neon.png" class="logo-deezer" width="100" height="100" x="480" y="349"></image>
                 <image xlink:href="./assets/images/lable_neon.png" id="dist_image" class="logo-label" width="100" height="100" x="260" y="187" style="opacity: 0;"></image>
                 <image xlink:href="./assets/images/artist_neon.png" class="logo-artist-2" width="100" height="100" x="0" y="349" style="opacity: 0;"></image>
                 <image xlink:href="./assets/images/artist_neon.png" class="logo-artist-3" width="100" height="100" x="0" y="511" style="opacity: 0;"></image>
             
                 <text text-anchor="middle" dominant-baseline="central" id="dist_text" style="opacity: 0;" x="310" y="312">Dist / Label</text>
-                <svg width="600" height="400">
-                    <text text-anchor="middle" dominant-baseline="central" id="artist_text" x="50" y="312">Fraudster</text>
-                    <text text-anchor="middle" dominant-baseline="central" id="streamers_text" x="530" y="312">Target</text>
-                </svg>
+                <text text-anchor="middle" dominant-baseline="central" id="artist_text" x="50" y="312">Fraudster</text>
+                <text text-anchor="middle" dominant-baseline="central" id="streamers_text" x="530" y="474">Potential Targets</text>
                 <g id="music_notes">
-                    <image xlink:href="./assets/images/note_neon.png" class="music-note note-apple" width="50" height="50" x="100" y="162"></image>
-                    <image xlink:href="./assets/images/note_neon.png" class="music-note note-info" width="50" height="50" x="100" y="262"></image>
-                    </g>
+                    <image xlink:href="./assets/images/note_neon.png" class="music-note note-spotify" width="50" height="50" x="100" y="212"></image>
+                    <image xlink:href="./assets/images/note_neon.png" class="music-note note-apple" width="50" height="50" x="100" y="212"></image>
+                    <image xlink:href="./assets/images/note_neon.png" class="music-note note-deezer" width="50" height="50" x="100" y="212"></image>
+                    <image xlink:href="./assets/images/note_neon.png" class="moving-note" width="50" height="50" x="100" y="212" style="opacity: 0;"></image>
+                </g>
         </svg>
     </div>
-    <div class="customerjourney">
-        <div class="step" data-step="1">Place holder</div>
- 
-      </div>
-</div>
 
+    <div class="customerjourney">
+        <img src="assets/images/Customer Journey Graph (2).png" alt="Customer Journey Graph" class="journey-graph">
+        <div class="step" data-step="1">Place holder</div>
+    </div>
     <div class="globeContainer">
         <iframe src="http://127.0.0.1:5503/colloquium%20i%20Catherine%20Ye%202/interactiveglobe/indexfinal.html" frameborder="0" width="100%" height="500px"></iframe>
     </div>
@@ -64,7 +96,7 @@
     <div class="container">
         <div class="description panel blue">
         <div>
-            SCROLL DOWN
+            Place holder for a timeline
             <div class="scroll-down"><div class="arrow"></div></div>
         </div>
         </div>
@@ -75,14 +107,12 @@
         <section class="panel orange">
         TWO
         </section>
-        <section class="panel purple">
-        THREE
-        </section>
+
     </div>
 
     
     <div class="lastContainer">
-        Last Container
+        Design fictions
     </div>
 
 
