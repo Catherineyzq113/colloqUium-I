@@ -3,24 +3,21 @@
     <svg class="pudding-chart" id="dist_diag" width="630" height="534">
         <g class="g-axis"></g>
         <g class="g-vis" transform="translate(20, 20)">
-            <image xlink:href="./assets/images/artist_neon.png" class="logo-artist" width="100" height="100" x="480" y="187""></image>
-            <image xlink:href="./assets/images/spotify_neon.png" class="logo-spotify" width="100" height="100" x="0" y="25"></image>
-            <image xlink:href="./assets/images/apple_neon.png" class="logo-apple" width="100" height="100" x="0" y="187"></image>
-            <image xlink:href="./assets/images/deezer_neon.png" class="logo-deezer" width="100" height="100" x="0" y="349"></image>
-            <image xlink:href="./assets/images/lable_neon.png" id="dist_image" class="logo-label" width="100" height="100" x="260" y="187" style="opacity: 0;"></image>
-            <image xlink:href="./assets/images/artist_neon.png" class="logo-artist-2" width="100" height="100" x="0" y="349" style="opacity: 0;"></image>
-            <image xlink:href="./assets/images/artist_neon.png" class="logo-artist-3" width="100" height="100" x="0" y="511" style="opacity: 0;"></image>
-        
+            <image xlink:href="../assets/images/profile.png" class="logo-artist" width="100" height="100" x="480" y="187""></image>
+            <image xlink:href="../assets/images/fake.png" class="logo-spotify" width="100" height="100" x="0" y="25"></image>
+            <image xlink:href="../assets/images/fake.png" class="logo-apple" width="100" height="100" x="0" y="187"></image>
+            <image xlink:href="../assets/images/fake.png" class="logo-deezer" width="100" height="100" x="0" y="349"></image>
+
             <text text-anchor="middle" dominant-baseline="central" id="dist_text" style="opacity: 0;" x="310" y="312">Dist / Label</text>
             <text text-anchor="middle" dominant-baseline="central" id="artist_text" x="50" y="312">Fake Colleague 1</text>
             <text text-anchor="middle" dominant-baseline="central" id="artist_text" x="50" y="150">Fake CFO</text>
             <text text-anchor="middle" dominant-baseline="central" id="artist_text" x="50" y="474">Fake Colleague 2</text>
             <text text-anchor="middle" dominant-baseline="central" id="streamers_text" x="530" y="312">Potential Targets</text>
             <g id="music_notes">
-                <image xlink:href="./assets/images/note_neon.png" class="music-note note-spotify" width="80" height="80" x="100" y="212"></image>
-                <image xlink:href="./assets/images/note_neon.png" class="music-note note-apple" width="80" height="80" x="100" y="212"></image>
-                <image xlink:href="./assets/images/note_neon.png" class="moving-note" width="50" height="50" x="100" y="212" style="opacity: 0;"></image>
+                <image xlink:href="../assets/images/meeting.png" class="music-note note-spotify" width="80" height="80" x="100" y="212"></image>
+                <image xlink:href="../assets/images/note_neon.png" class="music-note note-apple" width="80" height="80" x="100" y="212"></image>
             </g>
+        </g>
     </svg>
 </div>
     <div id="sections">
@@ -78,16 +75,21 @@
 
     body {
         display: flex;
+        background-color: black;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
         margin: 0;
         padding: 0;
+        color: white;
     }
 
     #container {
         max-width: 100%;
-        width: 630px; /* 或者您想要的宽度 */
+        width: 630px;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* 或者您想要的宽度 */
     }
 
     .fixed-logo {
@@ -99,4 +101,7 @@
         transition: opacity 0.5s ease-in-out;
     }
 
+    text {
+        fill: rgb(167, 167, 167);
+    }
 </style>
