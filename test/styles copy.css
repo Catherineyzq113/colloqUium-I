@@ -49,8 +49,8 @@ body {
 }
 
 .step {
-  position: absolute;
-  bottom: 20px;
+  position: relative; /* 改为 relative */
+  bottom: 20px; /* 如果需要，可以调整其他样式 */
 }
 
 .spacer {

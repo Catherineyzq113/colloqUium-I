@@ -93,7 +93,6 @@ btn.addEventListener("click", () => {
   firstContainer.innerHTML = "<h1>Click the screen</h1><footer><button class='clear-btn'>Clear</button></footer>";
 });
 
-
 document.addEventListener("DOMContentLoaded", function() {
   const scroller = scrollama();
   let currentGraph = null;
@@ -103,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
       step: ".step",
     })
     .onStepEnter((response) => {
+      console.log("Step entered:", response.element); // 调试信息
       const graphId = response.element.dataset.graph;
       const graphElement = document.getElementById(graphId);
   
@@ -110,23 +110,24 @@ document.addEventListener("DOMContentLoaded", function() {
         hideGraph(currentGraph);
       }
       
-      showGraph(graphElement, graphId);
+      showGraph(graphElement);
       currentGraph = graphElement;
     });
   
   function hideGraph(element) {
-    gsap.to(element, { autoAlpha: 0, duration: 0.5 });
+    console.log("Hiding graph:", element.id); // 调试信息
+    gsap.to(element, { autoAlpha: 0, duration: 0.5, onComplete: () => {
+      element.style.display = 'none';
+    }});
   }
   
-  function showGraph(element, graphId) {
-    if (graphId === 'graph1') {
-      element.style.display = 'block';
-    } else {
-      gsap.fromTo(
-        element,
-        { autoAlpha: 0, y: "2rem" },
-        { autoAlpha: 1, y: "0rem", duration: 0.5 }
-      );
-    }
+  function showGraph(element) {
+    console.log("Showing graph:", element.id); // 调试信息
+    element.style.display = 'block';
+    gsap.fromTo(
+      element,
+      { autoAlpha: 0 },
+      { autoAlpha: 1, duration: 0.5 }
+    );
   }
 });
