@@ -88,15 +88,10 @@ firstContainer.addEventListener("touchstart", function(event) {
   placeImage(event.touches[0].pageX, event.touches[0].pageY);
 });
 
-btn.addEventListener("click", () => {
-  console.log("clicked");
-  firstContainer.innerHTML = "<h1>Click the screen</h1><footer><button class='clear-btn'>Clear</button></footer>";
-});
-
 document.addEventListener("DOMContentLoaded", function() {
   const scroller = scrollama();
   let currentGraph = null;
-  
+
   scroller
     .setup({
       step: ".step",
