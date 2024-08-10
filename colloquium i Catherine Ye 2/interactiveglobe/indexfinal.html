@@ -34,10 +34,21 @@
 
     let selectedCountry = null;
 
-    const clickableCountries = [
-      'United States of America', 'China', 'United Kingdom', 'Canada', 
-      'Spain', 'Brazil', 'Australia', 'United Arab Emirates'
-    ];
+    const clickableCountries = {
+      'United States of America': 3000,
+      'China': 2600,
+      'United Kingdom': 1766,
+      'Canada': 477,
+      'Spain': 1500,
+      'Brazil': 828,
+      'Japan': 2800,
+      'United Arab Emirates': 2200,
+      'Philippines': 4500,
+      'Algeria': 1000,
+      'Mexico': 700,
+      'Argentina': 766,
+      'South Africa': 1200
+    };
 
     // 加载国家数据
     fetch('//unpkg.com/world-atlas/countries-110m.json')
@@ -46,7 +57,7 @@
         const countries = topojson.feature(countriesTopo, countriesTopo.objects.countries).features;
         
         countries.forEach(country => {
-          country.clickable = clickableCountries.includes(country.properties.name);
+          country.clickable = country.properties.name in clickableCountries;
         });
 
         world
@@ -64,9 +75,16 @@
               selectedCountry = selectedCountry && selectedCountry.id === d.id ? null : d;
               world.polygonsData(countries); 
               const backgroundText = document.getElementById('backgroundText');
-              backgroundText.textContent = selectedCountry ? selectedCountry.properties.name : '';
+              backgroundText.textContent = selectedCountry ? clickableCountries[selectedCountry.properties.name] : '';
             }
           });
+
+        // 调整渲染顺序
+        world.scene().children.forEach(child => {
+          if (child.type === 'Mesh' && child.material.transparent) {
+            child.renderOrder = 10;
+          }
+        });
       });
 
     // 环形效果的位置
@@ -99,7 +117,14 @@
       .ringMaxRadius('maxR')
       .ringPropagationSpeed('propagationSpeed')
       .ringRepeatPeriod('repeatPeriod')
-      .ringAltitude(0.01);
+      .ringAltitude(0.005);
+
+    // 确保环形在地球仪上方
+    world.scene().children.forEach(child => {
+      if (child.type === 'Mesh' && child.material.depthWrite === false) {
+        child.renderOrder = 20;
+      }
+    });
   </script>
 </body>
 </html>
