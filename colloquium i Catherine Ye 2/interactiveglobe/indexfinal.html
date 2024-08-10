@@ -44,10 +44,9 @@
       'Japan': 2800,
       'United Arab Emirates': 2200,
       'Philippines': 4500,
-      'Algeria': 1000,
       'Mexico': 700,
       'Argentina': 766,
-      'South Africa': 1200
+      'South Africa': 1200,
     };
 
     // 加载国家数据
@@ -117,7 +116,7 @@
       .ringMaxRadius('maxR')
       .ringPropagationSpeed('propagationSpeed')
       .ringRepeatPeriod('repeatPeriod')
-      .ringAltitude(0.005);
+      .ringAltitude(0.02);
 
     // 确保环形在地球仪上方
     world.scene().children.forEach(child => {
