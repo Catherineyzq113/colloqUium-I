@@ -11,8 +11,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 48px;
-      color: rgba(255,255,255,0.3);
+      font-size: 200px;
+      color: rgba(255, 72, 0, 0.77);
       pointer-events: none;
     }
   </style>
@@ -118,12 +118,6 @@
       .ringRepeatPeriod('repeatPeriod')
       .ringAltitude(0.02);
 
-    // 确保环形在地球仪上方
-    world.scene().children.forEach(child => {
-      if (child.type === 'Mesh' && child.material.depthWrite === false) {
-        child.renderOrder = 20;
-      }
-    });
   </script>
 </body>
 </html>
