@@ -92,6 +92,29 @@ document.addEventListener("DOMContentLoaded", function() {
   const scroller = scrollama();
   let currentGraph = null;
 
+  function hideGraph(element) {
+    console.log("Hiding graph:", element.id); // 调试信息
+    gsap.to(element, { autoAlpha: 0, duration: 0.5, onComplete: () => {
+      element.style.display = 'none';
+    }});
+  }
+  
+
+  function showGraph(element) {
+    if (element) {
+      console.log("Showing graph:", element.id); // 调试信息
+      element.style.display = 'block';
+      gsap.fromTo(
+        element,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, duration: 0.5 }
+      );
+    } else {
+      console.error("Graph element is null or undefined");
+    }
+  }
+  
+  // 在 onStepEnter 回调中
   scroller
     .setup({
       step: ".step",
@@ -101,28 +124,17 @@ document.addEventListener("DOMContentLoaded", function() {
       const graphId = response.element.dataset.graph;
       const graphElement = document.getElementById(graphId);
   
-      if (currentGraph !== null && currentGraph !== graphElement) {
-        hideGraph(currentGraph);
+      if (graphElement) {
+        if (currentGraph !== null && currentGraph !== graphElement) {
+          hideGraph(currentGraph);
+        }
+        
+        showGraph(graphElement);
+        currentGraph = graphElement;
+      } else {
+        console.error("Graph element not found for id:", graphId);
       }
-      
-      showGraph(graphElement);
-      currentGraph = graphElement;
     });
-  
-  function hideGraph(element) {
-    console.log("Hiding graph:", element.id); // 调试信息
-    gsap.to(element, { autoAlpha: 0, duration: 0.5, onComplete: () => {
-      element.style.display = 'none';
-    }});
-  }
-  
-  function showGraph(element) {
-    console.log("Showing graph:", element.id); // 调试信息
-    element.style.display = 'block';
-    gsap.fromTo(
-      element,
-      { autoAlpha: 0 },
-      { autoAlpha: 1, duration: 0.5 }
-    );
-  }
+ 
+
 });

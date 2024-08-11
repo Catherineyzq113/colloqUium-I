@@ -144,9 +144,16 @@ a {
   -webkit-text-fill-color: inherit;
   object-fit: contain;
   background-image: url('../images/poi.png');
-  background-position: 0 0;
-  background-size: auto;
+  
+  /* Center the background image */
+  background-position: center; 
+  
+  /* Ensure the background image doesn't repeat and is smaller */
+  background-size: contain; 
+  
   background-clip: border-box;
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  
   border: 0 solid #fff;
   border-radius: 0;
   flex-flow: column;
@@ -154,13 +161,14 @@ a {
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
   margin-right: 21px;
-  padding-top: 40vh;
-  padding-bottom: 40vh;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
   padding-right: 0;
   display: flex;
   position: static;
   overflow: visible;
 }
+
 
 .section.wide.purple {
   background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg'), linear-gradient(135deg, #fc0a7e, #602bb6);
@@ -950,7 +958,7 @@ a {
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
-  padding: 82px 30px 80px;
+  padding: 62px 30px 80px; /* Reduced padding-top by 20px */
   display: grid;
   position: relative;
 }
@@ -973,7 +981,7 @@ a {
   justify-content: flex-start;
   align-items: flex-start;
   max-width: 46%;
-  margin-left: 201px;
+  margin-left: 101px;
   padding-left: 191px;
   display: flex;
 }
@@ -1015,7 +1023,7 @@ a {
 }
 
 .form-3 {
-  margin-left: 293px;
+  margin-left: 193px;
   margin-right: 93px;
   padding-right: 0;
 }
