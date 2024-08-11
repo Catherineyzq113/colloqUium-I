@@ -137,14 +137,29 @@ a {
 }
 
 .section.wide.img {
+  box-sizing: content-box;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   background-color: var(--white);
+  -webkit-text-fill-color: inherit;
+  object-fit: contain;
   background-image: url('../images/poi.png');
   background-position: 0 0;
   background-size: auto;
-  border: 50px solid #fff;
+  background-clip: border-box;
+  border: 0 solid #fff;
   border-radius: 0;
+  flex-flow: column;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  margin-right: 21px;
   padding-top: 40vh;
   padding-bottom: 40vh;
+  padding-right: 0;
+  display: flex;
+  position: static;
+  overflow: visible;
 }
 
 .section.wide.purple {
@@ -1000,8 +1015,9 @@ a {
 }
 
 .form-3 {
-  margin-left: 389px;
-  margin-right: 26px;
+  margin-left: 293px;
+  margin-right: 93px;
+  padding-right: 0;
 }
 
 .heading-5 {
