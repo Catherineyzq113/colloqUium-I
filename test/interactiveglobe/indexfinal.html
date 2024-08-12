@@ -16,15 +16,15 @@
       pointer-events: none;
     }
   </style>
-  <script src="//unpkg.com/topojson-client"></script>
-  <script src="//unpkg.com/globe.gl"></script>
-  <script src="//unpkg.com/three/build/three.module.js"></script>
+  <script src="https://unpkg.com/topojson-client"></script>
+  <script src="https://unpkg.com/globe.gl"></script>
+  <script src="https://unpkg.com/three/build/three.module.js"></script>
 </head>
 <body>
   <div id="globeViz"></div>
   <div id="backgroundText"></div>
   <script type="module">
-    import * as THREE from '//unpkg.com/three/build/three.module.js';
+    import * as THREE from 'https://unpkg.com/three/build/three.module.js';
 
     const world = Globe()
       (document.getElementById('globeViz'))
@@ -50,7 +50,7 @@
     };
 
     // 加载国家数据
-    fetch('//unpkg.com/world-atlas/countries-110m.json')
+    fetch('https://unpkg.com/world-atlas/countries-110m.json')
       .then(res => res.json())
       .then(countriesTopo => {
         const countries = topojson.feature(countriesTopo, countriesTopo.objects.countries).features;
