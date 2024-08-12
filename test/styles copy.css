@@ -23,6 +23,60 @@ body {
   font-size: 2em;
   color: #f2f2f2;
 }
+/* Navigation Styles */
+/* Vertical Timeline Navigation Styles */
+.timeline-navbar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: transparent;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.timeline-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.timeline-links li {
+  display: block;
+}
+
+.timeline-links a {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 1em;
+  opacity: 0.4;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline-links a:hover {
+  opacity: 1;
+  background-color: #343536;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.timeline-links a::before {
+  content: "•";
+  color: #f2f2f2;
+  opacity: 0.8;
+  font-size: 1.2em;
+  padding-right: 8px;
+  transition: color 0.3s ease;
+}
+
+.timeline-links a:hover::before {
+  color: #ffcc00;
+}
+
+
 
 .firstContainer {
   display: flex;
@@ -47,26 +101,29 @@ body {
   font-style: italic;
   color: #dad4d4;
 }
+/* Scroll Section and Background */
 #scroll-section {
-  position: relative;
+  position: relative; /* Ensure the scroll section is positioned relative */
   overflow: hidden;
 }
 
 #background {
+  position: absolute; /* Make sure the background stays in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Make sure it covers the full viewport */
   background-color: #000000;
-  inset: 0;
-  z-index: -1; /* 或使用背景图片 */
+  z-index: -1; /* Stay behind other elements */
 }
+
+/* Graphs within the Scroll Section */
 #graphs {
-  position: sticky;
+  position: sticky; /* Sticky to keep it in view during scroll */
   top: 0;
   height: 100vh;
   width: 100%;
-}
-
-#graph-container {
-  position: absolute;
-  inset: 0;
+  z-index: 1; /* Ensure it is above the background but below other content */
 }
 
 #graph-container > div {
@@ -74,25 +131,8 @@ body {
   inset: 0;
   opacity: 0;
   transition: opacity 0.5s;
+  z-index: 2; /* Above the graphs container */
 }
-
-.step {
-  position: relative; /* 改为 relative */
-  bottom: 20px; /* 如果需要，可以调整其他样式 */
-}
-
-.spacer {
-  font-family: 'Reddit Mono';
-  margin-bottom: 2rem;
-}
-
-.spacer-header {
-  font-family: 'Reddit Mono';
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-
 
 
 .graphs iframe {
@@ -105,6 +145,24 @@ body {
   z-index: -1; /* Keeps the iframe behind other content */
   display: none; /* Start with the iframe hidden */
 }
+/* Ensure Correct Structure */
+.step {
+  position: relative;
+  margin-bottom: 2rem; /* Adjust to control the scroll offset */
+}
+
+
+.spacer {
+  font-family: 'Reddit Mono';
+  margin-bottom: 2rem;
+}
+
+.spacer-header {
+  font-family: 'Reddit Mono';
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
 
 
 .customerjourney {
@@ -120,8 +178,8 @@ body {
 }
 
 .journey-graph {
-  max-width: 90%;
-  max-height: 80vh;
+  max-width: 100%;
+  max-height: 100vh;
   width: auto;
   height: auto;
   position: static;

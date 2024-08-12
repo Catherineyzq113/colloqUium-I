@@ -4,6 +4,15 @@ gsap.registerPlugin(ScrollTrigger);
 // GSAP Horizontal Scroll
 let sections = gsap.utils.toArray(".panel");
 
+// Mobile Navigation Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('expanded');
+});
+
+
 gsap.to(sections, {
   xPercent: -100 * (sections.length - 1),
   ease: "none",
