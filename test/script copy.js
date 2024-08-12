@@ -93,16 +93,17 @@ document.addEventListener("DOMContentLoaded", function() {
   let currentGraph = null;
 
   function hideGraph(element) {
-    console.log("Hiding graph:", element.id); // 调试信息
-    gsap.to(element, { autoAlpha: 0, duration: 0.5, onComplete: () => {
-      element.style.display = 'none';
-    }});
+    if (element) {
+      console.log("Hiding graph:", element.id);
+      gsap.to(element, { autoAlpha: 0, duration: 0.5, onComplete: () => {
+        element.style.display = 'none';
+      }});
+    }
   }
   
-
   function showGraph(element) {
     if (element) {
-      console.log("Showing graph:", element.id); // 调试信息
+      console.log("Showing graph:", element.id);
       element.style.display = 'block';
       gsap.fromTo(
         element,
@@ -114,27 +115,33 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   
-  // 在 onStepEnter 回调中
   scroller
     .setup({
       step: ".step",
     })
     .onStepEnter((response) => {
-      console.log("Step entered:", response.element); // 调试信息
+      console.log("Step entered:", response.element);
       const graphId = response.element.dataset.graph;
-      const graphElement = document.getElementById(graphId);
-  
-      if (graphElement) {
-        if (currentGraph !== null && currentGraph !== graphElement) {
-          hideGraph(currentGraph);
-        }
+      
+      if (graphId) {
+        const graphElement = document.getElementById(graphId);
         
-        showGraph(graphElement);
-        currentGraph = graphElement;
+        if (graphElement) {
+          if (currentGraph && currentGraph !== graphElement) {
+            hideGraph(currentGraph);
+          }
+          
+          showGraph(graphElement);
+          currentGraph = graphElement;
+        } else {
+          console.error("Graph element not found for id:", graphId);
+        }
       } else {
-        console.error("Graph element not found for id:", graphId);
+        console.log("No graph associated with this step");
+        if (currentGraph) {
+          hideGraph(currentGraph);
+          currentGraph = null;
+        }
       }
     });
- 
-
 });
