@@ -43,9 +43,9 @@
 
 
   <div id="scroll-section" style="position: relative;">
-    <div id="background" style="position: absolute; inset: 0; z-index: -1;">
-      <div id="graphs" style="position: sticky; top: 0; height: 100vh; width: 100%;">
-        <div id="graph-container" style="position: absolute; inset: 0;">
+    <div id="background">
+      <div id="graphs">
+        <div id="graph-container">
           <div id="graph1" style="position: absolute; inset: 0; opacity: 0;">
             <iframe src="./customflowtest/index2.html" style="width:100%; height:100vh"></iframe>
           </div>
@@ -65,7 +65,7 @@
     </div>
   </div>      
 
-  <div id="text" style="position: relative; z-index: 1;"> <!-- start of text -->
+  <div id="text"> <!-- start of text -->
 
       <!-- step 01 -->
       <div class="step" data-graph="graph1" style="padding-left:50px; height:150vh; position: relative; width:100vw; pointer-events: none; background-color: transparent;">
@@ -177,20 +177,37 @@
   </div>
 
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 
-
-    <div class="container">
-        <div class="description panel blue">
-        <div>
-            Place holder for a timeline
-        </div>
-        </div>
-
+  
+  <div class="container">
+    <div class="tabs-container">
+      <div class="tab" id="tab1">
+        <h3>TrustWeb</h3>
+      </div>
+      <div class="tab" id="tab2">
+        <h3>EyeWitness</h3>
+      </div>
+      <div class="tab" id="tab3">
+        <h3>VeriLens</h3>
+      </div>
     </div>
-
+  
+    <div class="description panel blue" id="content-panel">
+      <div id="animation-container">
+        <!-- The p5.js tree map will be rendered here -->
+      </div>
+      <div class="info-section" id="info-content">
+        <!-- Content from the selected tab will be displayed here -->
+      </div>
+    </div>
+  </div>
+  
+  
     
     <div class="lastContainer">
-        Design fictions
+      <div class="step" data-step="1">      <h3>No system is completely secure...</h3></div>
+
     </div>
 
 

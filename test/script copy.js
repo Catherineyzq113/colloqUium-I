@@ -158,3 +158,40 @@ document.addEventListener("DOMContentLoaded", function() {
   // Reinitialize Scrollama on window resize
   window.addEventListener('resize', scroller.resize);
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('.tab');
+  const contentPanel = document.getElementById('content-panel');
+  const infoContent = document.getElementById('info-content');
+
+  const tabContent = {
+    'tab1': `<div class="design-fiction">
+               <h3>TrustWeb: Blockchain-Enhanced Verification Network</h3>
+               <p><strong>Perspective:</strong> Technological Infrastructure</p>
+               <p><strong>How It Works:</strong> Every piece of digital content is cryptographically hashed and verified through a decentralized blockchain network. Users can easily check content authenticity via API or browser plugin.</p>
+             </div>`,
+    'tab2': `<div class="design-fiction">
+               <h3>EyeWitness: AI-Augmented Human Authentication</h3>
+               <p><strong>Perspective:</strong> Human-Centric Verification</p>
+               <p><strong>How It Works:</strong> Combines AI filtering with human expert analysis to verify suspicious content in real-time. Experts are incentivized through a reward system, improving the overall detection process.</p>
+             </div>`,
+    'tab3': `<div class="design-fiction">
+               <h3>VeriLens: Consumer-Based Smart Device Integration</h3>
+               <p><strong>Perspective:</strong> User-Centric Protection</p>
+               <p><strong>How It Works:</strong> Embedded in consumer devices, VeriLens performs real-time deepfake detection using edge AI. Users can flag suspicious content, contributing to a collective database for better detection.</p>
+             </div>`
+  };
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      contentPanel.style.display = 'block';
+      infoContent.style.opacity = '0';
+      
+      setTimeout(() => {
+        infoContent.innerHTML = tabContent[tab.id];
+        infoContent.style.opacity = '1';
+      }, 300); // Match this with the transition duration for smooth effect
+    });
+  });
+});

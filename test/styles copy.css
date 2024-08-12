@@ -102,36 +102,48 @@ body {
   color: #dad4d4;
 }
 /* Scroll Section and Background */
+/* Scroll Section Container */
 #scroll-section {
   position: relative; /* Ensure the scroll section is positioned relative */
-  overflow: hidden;
+  overflow: hidden; /* Prevent overflow issues */
 }
 
+/* Background Layer */
 #background {
-  position: absolute; /* Make sure the background stays in place */
+  position: fixed; /* Fixed to stay in place during scrolling */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* Make sure it covers the full viewport */
-  background-color: #000000;
-  z-index: -1; /* Stay behind other elements */
+  height: 100vh; /* Cover the full viewport */
+  background-color: #000000; /* Background color */
+  z-index: -1; /* Ensure it stays behind all other elements */
 }
 
 /* Graphs within the Scroll Section */
 #graphs {
-  position: sticky; /* Sticky to keep it in view during scroll */
+  position: sticky; /* Sticky to keep in view during scroll */
   top: 0;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   width: 100%;
-  z-index: 1; /* Ensure it is above the background but below other content */
+  z-index: 1; /* Above background, below other content */
 }
 
+/* Individual Graph Containers */
 #graph-container > div {
   position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.5s;
+  inset: 0; /* Position to fill the entire graph container */
+  opacity: 0; /* Start with hidden graphs */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in and fade-out */
   z-index: 2; /* Above the graphs container */
+}
+
+/* Text Containers within the Scroll Section */
+#text > div {
+  position: absolute;
+  inset: 0; /* Position to fill the entire text container */
+  opacity: 0; /* Start with hidden text */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in and fade-out */
+  z-index: 3; /* Ensure it is above the graphs */
 }
 
 
@@ -209,28 +221,120 @@ body {
 }
 
 .container {
-  width: 300vw;
-  height: 100vh;
   display: flex;
-  flex-wrap: nowrap;
-}
-
-.panel {
-  width: 100vw;
-  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 48px;
-  color: white;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.blue { background-color: #343536; }
-.red { background-color: #685b4b; }
-.orange { background-color: #e7a438; }
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  margin: 0 15px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.tab:hover {
+  background-color: #333;
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tab.active {
+  background-color: #007BFF;
+  color: #ffffff;
+}
+
+.panel.blue {
+  background-color: #121212;
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 70%;
+  position: relative;
+  display: none; /* Hidden by default */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#animation-container {
+  width: 70%;
+  height: 400px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.info-section {
+  margin-top: 20px;
+}
+
+.design-fiction {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.design-fiction h3 {
+  margin-top: 0;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.design-fiction p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #b3b3b3;
+  line-height: 1.6;
+}
+
+.panel.blue::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 5px;
+  width: 50px;
+  background-color: #007BFF;
+  border-radius: 5px;
+}
+
+.design-fiction:hover {
+  background-color: #292929;
+  transition: background-color 0.3s;
+}
 
 .lastContainer {
-  background-color: #343536;
+  background-color: #000000;
+  color: white;
   width: 300vw;
   height: 100vh;
   display: flex;
