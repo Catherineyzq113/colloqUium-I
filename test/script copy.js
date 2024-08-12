@@ -88,6 +88,7 @@ firstContainer.addEventListener("touchstart", function(event) {
   placeImage(event.touches[0].pageX, event.touches[0].pageY);
 });
 
+
 document.addEventListener("DOMContentLoaded", function() {
   const scroller = scrollama();
   let currentGraph = null;
@@ -117,31 +118,34 @@ document.addEventListener("DOMContentLoaded", function() {
   
   scroller
     .setup({
-      step: ".step",
+      step: '.step',
+      offset: 0.5,
     })
-    .onStepEnter((response) => {
-      console.log("Step entered:", response.element);
-      const graphId = response.element.dataset.graph;
-      
-      if (graphId) {
-        const graphElement = document.getElementById(graphId);
-        
-        if (graphElement) {
-          if (currentGraph && currentGraph !== graphElement) {
-            hideGraph(currentGraph);
-          }
-          
-          showGraph(graphElement);
-          currentGraph = graphElement;
-        } else {
-          console.error("Graph element not found for id:", graphId);
-        }
-      } else {
-        console.log("No graph associated with this step");
-        if (currentGraph) {
-          hideGraph(currentGraph);
-          currentGraph = null;
-        }
-      }
-    });
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
+  // Handle step enter
+  function handleStepEnter(response) {
+    // Hide the current graph if there is one
+    if (currentGraph) {
+      hideGraph(currentGraph);
+    }
+    
+    // Show the graph corresponding to the current step
+    currentGraph = document.querySelector(`#${response.element.dataset.graph}`);
+    if (currentGraph) {
+      showGraph(currentGraph);
+    } else {
+      console.error("No graph found for the current step");
+    }
+  }
+
+  // Handle step exit (optional)
+  function handleStepExit(response) {
+    // Custom logic on step exit if needed
+    console.log("Step exited:", response.element.dataset.graph);
+  }
+
+  // Reinitialize Scrollama on window resize
+  window.addEventListener('resize', scroller.resize);
 });
