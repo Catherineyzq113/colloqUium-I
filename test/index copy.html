@@ -42,23 +42,31 @@
   </div>
 
 
+
+  <div class="transition-section">
+    <div class="transition-text">
+        <p>Let's delve into the <span class="highlight">step-by-step</span> breakdown of how one of these high-profile frauds was orchestrated.</p>
+    </div>
+    <div class="down-arrow">
+        ↓
+    </div>
+</div>
+
+
   <div id="scroll-section" style="position: relative;">
     <div id="background">
       <div id="graphs">
         <div id="graph-container">
-          <div id="graph1" style="position: absolute; inset: 0; opacity: 0;">
+          <div id="graph1" style="position: absolute; inset: 0; opacity: 0; border: none;">
             <iframe src="./customflowtest/index2.html" style="width:100%; height:100vh"></iframe>
           </div>
-          <div id="graph2" style="position: absolute; inset: 0; opacity: 0;">
+          <div id="graph2" style="position: absolute; inset: 0; opacity: 0; border: none;">
             <iframe src="./customflowtest/index3.html" style="width:100%; height:100vh"></iframe>
           </div>
-        <div id="graph3" style="position: absolute; inset: 0; opacity: 0">
+        <div id="graph3" style="position: absolute; inset: 0; opacity: 0; border: none;">
           <iframe src="./customflowtest/index4.html" style="width:100%; height:100vh"></iframe>
         </div>
-        <div id="graph4" style="position: absolute; inset: 0; opacity: 0">
-          <iframe src="./customflowtest/index5.html" style="width:100%; height:100vh"></iframe>
-        </div>
-        <div id="graph5" style="position: absolute; inset: 0; opacity: 0">
+        <div id="graph4" style="position: absolute; inset: 0; opacity: 0; border: none;">
           <iframe src="./customflowtest/index5.html" style="width:100%; height:100vh"></iframe>
         </div>
       </div>
@@ -68,14 +76,14 @@
   <div id="text"> <!-- start of text -->
 
       <!-- step 01 -->
-      <div class="step" data-graph="graph1" style="padding-left:50px; height:150vh; position: relative; width:100vw; pointer-events: none; background-color: transparent;">
+      <div class="step">
           <div class="columns">
               <div class="column first">
                   <div class="spacer-header">
                       <br>
                       <br>
                       <br>
-                      <p><b>02A: DEEPER FINANCIAL BURDENS</b></p>
+                      <p><b>02A: DS</b></p>
                   </div>
                   <div class="spacer">
                       <h3>Initial Compromise:</h3>
@@ -88,7 +96,7 @@
       </div>
 
       <!-- step 02 -->
-      <div class="step" data-graph="graph2" style="padding-left:50px; height:150vh; position: relative; width:100vw; pointer-events: none; background-color: transparent;">
+      <div class="step" data-graph="graph1">
           <div class="columns">
               <!-- Content for section 2 -->
               <div class="column first"></div>
@@ -109,7 +117,7 @@
       </div>
 
       <!-- step 03 -->
-      <div class="step" data-graph="graph3" style="padding-left:50px; height:150vh; position: relative; width:100vw; pointer-events: none; background-color: transparent;">
+      <div class="step" data-graph="graph2">
         <div class="columns">
             <div class="column first add-left-padding">
               <div class="spacer-header">
@@ -129,7 +137,7 @@
 
 
       <!-- step 04 -->
-      <div class="step" data-graph="graph4" style="padding-left:50px; height:150vh; position: relative; width:100vw; pointer-events: none; background-color: transparent;">
+      <div class="step" data-graph="graph3">
         <div class="columns">
             <div class="column first add-left-padding">
               <div class="spacer-header">
@@ -148,7 +156,7 @@
       </div>
 
       <!-- step 05 -->
-      <div class="step" data-graph="graph5"> 
+      <div class="step" data-graph="graph4"> 
         <div class="columns">
             <div class="column first add-left-padding">
             <div class="spacer-header">
@@ -166,21 +174,18 @@
       </div>
     </div>
 
-  </div> <!-- end of text -->
+  </div> 
 
     <div class="customerjourney">
       <img src="assets/images/Customer Journey Graph (3).png" alt="Customer Journey Graph" class="journey-graph">
   </div>
 
-  
   <div class="globeContainer">
-    <div class="step" data-step="1">Click a country to see its increases in deepfake-specific fraud cases from 2022 to 2023 (in%)</div>
+    <div class="globeText">Click a country to see its increases in deepfake-specific fraud cases from 2022 to 2023 (in%)</div>
     <iframe src="interactiveglobe/indexfinal.html" frameborder="0" width="100%" height="100vh" style="border: none;"></iframe>
   </div>
-
-
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-
   
   <div class="container">
     <div class="tabs-container">
@@ -205,12 +210,24 @@
     </div>
   </div>
   
-  
-    
-    <div class="lastContainer">
-      <div class="step" data-step="1">      <h3>No system is completely secure...</h3></div>
-
+  <section id="conclusion-section" class="conclusion-container">
+    <div class="conclusion-content">
+        <h2>The Power of Perception: <span class="highlight">Unmasking the Trickery</span></h2>
+        <p>
+            At the beginning of this presentation, you were led to believe in a scenario that felt entirely plausible. 
+            Just like in <em>The Yes Men</em>, the trickery lies in crafting a narrative that seems credible, only to reveal 
+            the truth at the most impactful moment.
+        </p>
+        <p>
+            This approach was not just a playful experiment, but a demonstration of how easily our <span class="highlight">perceptions</span> can be manipulated—whether by a presenter, a corporate entity, or an AI-generated deepfake. 
+            In today's world, where AI can create <span class="highlight">convincing yet entirely fake content</span>, it’s more important than ever to be critical and question the information presented to us.
+        </p>
     </div>
+    <div class="conclusion-navigation">
+        <a href="#next-section" class="conclusion-button">Next: Learn How to Protect Yourself</a>
+    </div>
+</section>
+
 
 
 </body>

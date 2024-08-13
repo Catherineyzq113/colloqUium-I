@@ -19,19 +19,18 @@ body {
   padding: 0;
   overflow-x: hidden;
   overflow-y: scroll;
-  font-family: "Abril Fatface", cursive;
-  font-size: 1.5em; /* Adjusted for better readability */
-  color: #f2f2f2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.2em; /* Increased font size for better readability */
+  color: #cccccc; /* Darker text color */
 }
 
 /* Navigation Styles */
 .timeline-navbar {
   position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+  top: 20px;
+  left: 20px;
   background-color: transparent;
-  padding: 20px;
+  padding: 10px;
   z-index: 1000;
 }
 
@@ -39,26 +38,45 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .timeline-links a {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #f2f2f2;
+  font-family: inherit;
+  color: #cccccc; /* Darker text color */
   text-decoration: none;
-  padding: 5px;
-  font-size: 1em;
-  opacity: 0.4;
+  padding: 8px;
+  font-size: 1.2em; /* Larger font size */
+  opacity: 0.8; /* Increased opacity for better visibility */
   transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
 .timeline-links a:hover {
   opacity: 1;
-  background-color: #343536;
+  background-color: #e0e0e0; /* Slightly darker background on hover */
+  color: #000; /* Darker text on hover */
   border-radius: 5px;
   padding-left: 10px;
 }
 
+/* Special Style for 'Home' Button */
+.timeline-links .home-link {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #007BFF; /* Blue background for Home button */
+  border-radius: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.3em; /* Slightly larger font size for Home */
+  transition: all 0.3s ease;
+}
+
+.timeline-links .home-link:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  color: #ffffff;
+}
+
+/* Section Containers */
 .firstContainer {
   display: flex;
   flex-direction: column;
@@ -68,6 +86,9 @@ body {
   background: rgb(0, 0, 0);
   width: 100%;
   padding: 10px;
+  font-family: inherit;
+  font-size: 1.2em; /* Larger font size */
+  color: #cccccc; /* Darker text color */
 }
 
 .firstContainer img {
@@ -92,6 +113,84 @@ body {
   }
 }
 
+
+
+/* Transition Section */
+.transition-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000;
+  padding: 0 20px;
+  position: relative;
+}
+
+.headline-text,
+.transition-text {
+  font-size: 2em;
+  line-height: 1.5;
+  opacity: 1;
+  transform: translateY(0); /* Center the text vertically */
+}
+.transition-text {
+  margin-top: 2rem;
+}
+
+/* Highlight Text Effect - Animation */
+.highlight {
+  position: relative;
+  display: inline;
+  color: #fff; /* Initial color */
+  font-family: inherit; /* Inherit the font from the parent */
+  font-size: inherit; /* Inherit the font size from the parent */
+  line-height: inherit; /* Inherit the line height from the parent */
+}
+
+.highlight::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fe7200; /* Orange highlight color */
+  z-index: -1; /* Behind the text */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 2s ease 2s; /* 1s delay before the animation starts */
+}
+
+.highlight.animate::before {
+  transform: scaleX(1); /* Expand the highlight effect */
+}
+
+.highlight.animate {
+  color: #ffffff; /* Change text color when highlighted */
+}
+
+/* Arrow pointing down */
+.down-arrow {
+  font-size: 3em;
+  margin-top: 2rem;
+  color: #fe7200; /* Orange color for the arrow */
+  animation: bounce 1s infinite; /* Simple bounce animation */
+}
+
+/* Bouncing arrow animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+
+
 .diagram-container,
 .globeContainer {
   display: flex;
@@ -101,9 +200,11 @@ body {
   height: 100vh;
   background: #000;
   width: 100%;
-  padding: 10px; /* Added padding for better spacing */
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1.2em; /* Larger font size */
+  color: #cccccc; /* Darker text color */
 }
-
 /* Scroll Section and Background */
 #scroll-section {
   position: relative;
@@ -119,6 +220,7 @@ body {
   height: 100vh;
   background-color: #000000;
   z-index: -1;
+  border: none;
 }
 
 #graphs {
@@ -129,13 +231,20 @@ body {
   z-index: 1;
 }
 
-/* Individual Graph Containers */
+
 #graph-container > div {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Ensure the graph takes up the full height */
+  transform: scale(1.2); /* Scale up the graph by 20% */
+  transform-origin: center; /* Scale from the center */
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Ensure smooth transitions */
   z-index: 2;
+  border: none; /* Ensure no border */
+  background: transparent; /* Ensure no background color */
 }
 
 /* Text Containers within the Scroll Section */
@@ -147,14 +256,54 @@ body {
   z-index: 3;
 }
 
-/* Spacer and Text Styling */
-.spacer,
+/* Step Frame with Glowing Border */
+.step {
+  position: relative;
+  width: 27%; /* 40% of the screen width */
+  height: relative; /* 30% of the screen height */
+  padding: 2rem;
+  margin: 0 0 40rem 12%; /* Added 10% margin on the left side */
+  border: 5px solid #DD5800;
+  border-radius: 10px;
+  background: #fff1e6;
+  box-shadow: 0 0 20px #DD5800;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .spacer-header {
   margin-bottom: 2rem;
-  font-family: 'Reddit Mono';
-  font-size: 1.2rem;
-  padding: 10px; /* Added padding for better readability */
+  font-family: inherit;
+  font-size: 1.3rem; /* Larger font size */
+  padding: 10px;
+  color: #333; /* Darker text color for readability */
+  text-align: left; /* Centered text */
 }
+
+.spacer {
+  margin-top: 20px;
+  color: #333; /* Darker text color for readability */
+  text-align: left; /* Centered text */
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content within the smaller rectangle */
+  justify-content: center; /* Center content within the smaller rectangle */
+}
+
+.column.first {
+  margin-bottom: 20px;
+}
+
+.add-left-padding {
+  padding-left: 20px;
+}
+
 
 .customerjourney {
   width: 100%;
@@ -165,20 +314,42 @@ body {
   align-items: center;
   background: rgb(0, 0, 0);
   overflow: hidden;
+  color: #cccccc; /* Darker text color */
 }
 
 .journey-graph {
-  max-width: 100%;
-  max-height: 100vh;
-  object-fit: contain;
+  width: 120%; /* Increased width to make the image bigger */
+  height: 120vh; /* Increased height to make the image bigger */
+  object-fit: contain; /* Ensure the image scales properly within the container */
 }
 
+
+
+/* General Reset */
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Globe Container Section */
 .globeContainer iframe {
   width: 80%;
   height: 80vh;
   border: none;
 }
 
+.globeContainer .globeText {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1.2em;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Tabs Container and Description Panel */
 .container {
   width: 100%;
   background-color: #000000;
@@ -202,14 +373,14 @@ body {
 .tab {
   background-color: #1a1a1a;
   color: #fff;
-  padding: 10px 20px; /* Adjusted padding */
+  padding: 10px 20px;
   border-radius: 5px;
-  margin: 0 10px; /* Reduced margin */
+  margin: 0 10px;
   cursor: pointer;
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .tab:hover {
@@ -229,13 +400,14 @@ body {
   padding: 20px;
   border-radius: 10px;
   width: 100%;
-  max-width: 1200px; /* Restrict the max width */
+  max-width: 1200px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  font-size: 1.2em;
 }
 
 #animation-container {
   width: 100%;
-  height: 300px; /* Reduced height */
+  height: 300px;
   background-color: #1a1a1a;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -243,32 +415,73 @@ body {
 
 .info-section {
   margin-top: 20px;
+  color: #ffffff;
+  font-size: 1.2em;
 }
 
-.lastContainer {
-  background-color: #000000;
-  color: white;
-  width: 100%;
-  height: 100vh;
+
+/* Conclusion Section */
+.conclusion-container {
+  background-color: #121212; /* Dark background to contrast the previous sections */
+  color: #ffffff; /* White text for readability */
+  padding: 60px 20px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .tabs-container {
-    flex-direction: column;
-    width: 90%;
-  }
+.conclusion-content {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
 
-  .tab {
-    margin: 10px 0;
-    width: 100%;
-  }
+.conclusion-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #fe7200; /* Orange color to emphasize the conclusion heading */
+}
 
-  #animation-container {
-    height: 200px;
-  }
+
+
+/* Arrow pointing down */
+.down-arrow {
+font-size: 3em;
+margin-top: 2rem;
+color: #fe7200; /* Orange color for the arrow */
+animation: bounce 1s infinite; /* Simple bounce animation */
+}
+
+/* Bouncing arrow animation */
+@keyframes bounce {
+0%, 100% {
+  transform: translateY(0);
+}
+50% {
+  transform: translateY(10px);
+}
+}
+
+/* Conclusion Button */
+.conclusion-navigation {
+  margin-top: 40px;
+}
+
+.conclusion-button {
+  background-color: #fe7200; /* Orange background for the button */
+  color: #ffffff; /* White text */
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.conclusion-button:hover {
+  background-color: #e05f00; /* Darker orange on hover */
 }

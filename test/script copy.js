@@ -97,6 +97,11 @@ firstContainer.addEventListener("touchstart", function(event) {
   placeImage(event.touches[0].pageX, event.touches[0].pageY);
 });
 
+window.addEventListener('load', function() {
+  const highlight = document.querySelector('.highlight');
+  highlight.classList.add('animate');
+});
+
 
 document.addEventListener("DOMContentLoaded", function() {
   const scroller = scrollama();
@@ -193,5 +198,12 @@ document.addEventListener('DOMContentLoaded', function() {
         infoContent.style.opacity = '1';
       }, 300); // Match this with the transition duration for smooth effect
     });
+  });
+});
+
+window.addEventListener('load', function() {
+  const highlights = document.querySelectorAll('.highlight');
+  highlights.forEach(highlight => {
+    highlight.classList.add('animate');
   });
 });
