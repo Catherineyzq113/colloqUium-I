@@ -21,11 +21,12 @@
 <!-- Vertical Timeline Navigation -->
 <nav class="timeline-navbar">
   <ul class="timeline-links">
-    <li><a href="#section1">Home</a></li>
-    <li><a href="#section2">Process</a></li>
-    <li><a href="#section3">Loop</a></li>
-    <li><a href="#section4">Explosive Growth</a></li>
-    <li><a href="#section5">Design Frictions</a></li>
+    <li><a href="#firstContainer">Home</a></li>
+    <li><a href="#scroll-section">Process</a></li>
+    <li><a href="#customerjourney">Loop</a></li>
+    <li><a href="#globeContainer">Explosive Growth</a></li>
+    <li><a href="#container">Design Frictions</a></li>
+    <li><a href="#conclusion-section">Conclusion</a></li>
   </ul>
     </ul>
     <div class="menu-toggle">
@@ -37,7 +38,7 @@
 </nav>
 
 
-  <div class="firstContainer">
+<div id="firstContainer" class="firstContainer">
     <h1>Click the screen</h1>
   </div>
 
@@ -80,15 +81,8 @@
           <div class="columns">
               <div class="column first">
                   <div class="spacer-header">
-                      <br>
-                      <br>
-                      <br>
+
                       <p><b>02A: DS</b></p>
-                  </div>
-                  <div class="spacer">
-                      <h3>Initial Compromise:</h3>
-                      <p>Phishing Emails: AI-generated phishing emails are sent to employees of a target organization, leading to the compromise of email accounts.</p>
-                      <p>Reconnaissance: AI analyzes the compromised accounts to gather information on organizational hierarchies, payment processes, and typical email content.</p>
                   </div>
               </div>
               </div>
@@ -102,15 +96,15 @@
               <div class="column first"></div>
               <div class="column last">
                   <div class="spacer-header">
-                    <br>
-                    <br>
-                    <br>
-                    <p><b>02B: VEHICLE PREVALENCE</b></p>
+
+                    <p><b>Initial Compromise</b></p>
                   </div>
                   <div class="spacer">
-                      <h3>Preparation:</h3>
-                      <p>Profile Building: AI builds detailed profiles of key individuals, such as finance managers and executives.</p>
-                      <p>Deepfake Creation: Deepfake audio or video files are created to impersonate these individuals if necessary.</p>
+                      <h3>Phishing Emails: </h3>
+                      <p>AI builds detailed profiles of key individuals, such as finance managers and executives.</p>
+                      <br>
+                      <h3>Reconnaissance:</h3>
+                      <p>AI analyzes the compromised accounts to gather information on organizational hierarchies, payment processes, and typical email content.</p>
                   </div>
               </div>
           </div>
@@ -121,15 +115,15 @@
         <div class="columns">
             <div class="column first add-left-padding">
               <div class="spacer-header">
-                <br>
-                <br>
-                <br>
-                <p><b>02C: FOOD STAMP ASSISTANCE</b></p>
+
+                <p><b>Preparation</b></p>
               </div>
               <div class="spacer">
-                <h3>Preparation:</h3>
-                <p>Profile Building: AI builds detailed profiles of key individuals, such as finance managers and executives.</p>
-                <p>Deepfake Creation: Deepfake audio or video files are created to impersonate these individuals if necessary.</p>
+                <h3>Profile Building: </h3>
+                <p>AI builds detailed profiles of key individuals, such as finance managers and executives.</p>
+                <br>
+                <h3>Real-time Adaptation: </h3>
+                <p>AI monitors responses, adapting the messaging in real-time to overcome doubts and ensure the success of the fraud.</p>
               </div>
           </div>
         </div>
@@ -141,15 +135,14 @@
         <div class="columns">
             <div class="column first add-left-padding">
               <div class="spacer-header">
-                <br>
-                <br>
-                <br>
-                <p><b>02C: FOOD STAMP ASSISTANCE</b></p>
+                <p><b>Execution</b></p>
               </div>
               <div class="spacer">
-                <h3>Preparation:</h3>
-                <p>Profile Building: AI builds detailed profiles of key individuals, such as finance managers and executives.</p>
-                <p>Deepfake Creation: Deepfake audio or video files are created to impersonate these individuals if necessary.</p>
+                <h3>Deepfake Creation: </h3>
+                <p>Deepfake audio or video files are created to impersonate these individuals if necessary.</p>
+                <br>
+                <h3>Fraudulent Instructions:</h3>
+                <p>The emails contain instructions for unauthorized money transfers, disguised as urgent business transactions or legitimate requests.</p>
               </div>
             </div>
           </div>
@@ -160,15 +153,15 @@
         <div class="columns">
             <div class="column first add-left-padding">
             <div class="spacer-header">
-              <br>
-              <br>
-              <br>
-              <p><b>02C: FOOD STAMP ASSISTANCE</b></p>
+
+              <p><b>Final Exploitation</b></p>
             </div>
             <div class="spacer">
-              <h3>Preparation:</h3>
-              <p>Profile Building: AI builds detailed profiles of key individuals, such as finance managers and executives.</p>
-              <p>Deepfake Creation: Deepfake audio or video files are created to impersonate these individuals if necessary.</p>
+              <h3>Money Transfers:</h3>
+              <p>Believing the instructions to be legitimate, the target authorizes the transfer of funds to the fraudster’s account.</p>
+              <br>
+              <h3>Continued Exploitation: </h3> 
+              <p> AI may continue exploiting the compromised accounts to execute further fraudulent transactions or to compromise additional accounts.</p>
             </div>
         </div>
       </div>
@@ -176,18 +169,18 @@
 
   </div> 
 
-    <div class="customerjourney">
+    <div id="customerjourney" class="customerjourney">
       <img src="assets/images/Customer Journey Graph (3).png" alt="Customer Journey Graph" class="journey-graph">
   </div>
 
-  <div class="globeContainer">
+  <div id="globeContainer" class="globeContainer">
     <div class="globeText">Click a country to see its increases in deepfake-specific fraud cases from 2022 to 2023 (in%)</div>
     <iframe src="interactiveglobe/indexfinal.html" frameborder="0" width="100%" height="100vh" style="border: none;"></iframe>
   </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   
-  <div class="container">
+  <div id="container" class="container">
     <div class="tabs-container">
       <div class="tab" id="tab1">
         <h3>TrustWeb</h3>

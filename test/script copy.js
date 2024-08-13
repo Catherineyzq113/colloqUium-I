@@ -8,6 +8,15 @@ let sections = gsap.utils.toArray(".panel");
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
+
+function navigateToSection(sectionId) {
+  document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+}
+
+function toggleMenu() {
+  const navbar = document.querySelector('.timeline-navbar');
+  navbar.classList.toggle('active');
+}
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('expanded');
 });
