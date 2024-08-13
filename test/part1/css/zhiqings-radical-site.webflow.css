@@ -390,7 +390,7 @@ a {
 
 .p {
   color: #6b6b6b;
-  font-size: 16px;
+  font-size: 10px;
   line-height: 30px;
 }
 
@@ -694,17 +694,38 @@ a {
 
 .feature-wrap, .feature-wrap.reverse {
   display: flex;
-  border: 1px #000;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns items at the top */
+  height: 100vh;
+  padding: 20px;
+}
+
+
+.feature-content2 {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.feature-image1 {
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+
+
+.button-container2 {
+  position: absolute;
+  top: -37px;
+  right: 106px;
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  z-index: 10; /* Ensure buttons appear on top of other content */
+}
+
+img2 {
   width: 100%;
-  max-width: 1200px;
-  margin: 5vh auto;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  padding-left: 0;
-  padding-right: 0;
+  max-width: 500px;
+  margin-top: 20px;
 }
 
 
@@ -1048,15 +1069,16 @@ a {
 
 .hero-heading-left {
   background-color: #fff;
-  border-bottom: 1px solid #e4ebf3;
-  padding: 80px 30px;
+  border-bottom: 0px solid #e4ebf3;
+  margin-top: 10vh;
+  padding: 4% 2%;
   position: relative;
+  height: 100%;
   left: 0;
 }
 
 .container-2 {
   width: 100%;
-  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1064,13 +1086,12 @@ a {
 .hero-wrapper-2 {
   display: flex;
   gap: 40px;
+  height: 100%;
   justify-content: center;
   align-items: flex-start;
-  padding: 40px 20px;
+  padding: 60px 100px;
   background-color: #f7f7f7;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  max-width: 900px;
 }
 
 .hero-split-2 {
@@ -1093,19 +1114,21 @@ a {
 
 .button-primary-2 {
   color: #fff;
+  width: 50%;
+  align-self: center;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background-color: #1a1b1f;
+  background-color: #be814b80;
   margin-top: 27px;
   padding: 12px 25px;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 20px;
   transition: all .2s;
 }
 
 .button-primary-2:hover {
   color: #fff;
-  background-color: #32343a;
+  background-color: #ffa14e;
 }
 
 .button-primary-2:active {
@@ -1352,7 +1375,7 @@ video {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: -40px;
+    margin-bottom: 40px;
   }
 
   .hero-split-2, .hero-split-3 {

@@ -20,26 +20,39 @@
   
 </head>
 <body>
-  <div class="section">
-    <div class="feature-wrap reverse" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-      <div data-w-id="166cc754-3413-da35-e7ca-25fe4bd9a503" style="-webkit-transform:translate3d(0, 40, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="feature-content">
-        <div class="title">ConsectUltricies</div>
-        <h2 class="black-text">Lincoln Square</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-        <img src="images/filtered-map-with-poi.png" loading="lazy" sizes="(max-width: 479px) 82vw, (max-width: 991px) 42vw, 100vw" srcset="images/filtered-map-with-poi-p-500.png 500w, images/filtered-map-with-poi.png 794w" alt="">
-        
-        <div class="button-container">
-          <a href="#" class="w-button" onclick="history.back(); return false;">See another community</a>
-          <a href="#toulaine-section" class="w-button">Apartment options</a>
-        </div>
-      </div>
-      <img src="images/LincolnPark.png" width="507" alt="" style="-webkit-transform:translate3d(0, 40PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" sizes="(max-width: 767px) 90vw, 507px" data-w-id="c390b0d5-f17e-371d-35b7-7ed0dd95c1a9" loading="lazy" srcset="images/LincolnPark-p-500.png 500w, images/LincolnPark.png 604w">
-      <div class="feature-image"></div>
+  <section id="community-section" class="hero-heading-left" style="height: 100vh; padding: 143px;">
+    <!-- Top Section: Centered Text -->
+    <div class="text-container" style="text-align: center; margin-bottom: 30px;">
+      <div class="title">NYC COMMUNITY</div>
+      <h2 class="heading-6" style="margin-bottom: 60px;">Lincoln Square</h2>
     </div>
-    <div class="feature-wrap reverse"></div>
+
+    <div class="container-wrapper" style="display: flex; justify-content: center; align-items: center; gap: 120px; width: 100%; margin: 0 auto; padding: 0px;">
+      <!-- Left Container: Text and Image -->
+      <div class="container-2" style="flex: 0.5; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 40px;">
+        <p style="margin-bottom: 10px; max-width: 700px; font-size: 1.2rem;">High-rise apartments in Lincoln Square offer stunning views of Central Park, the Hudson River, and Manhattan’s skyline. Higher floors provide panoramic, unobstructed vistas, making them highly desirable, while views on lower floors can vary significantly.</p>
+        <img src="images/filtered-map-with-poi.png" loading="lazy" style="width: 70%;" alt="Map Image">
+      </div>
+    
+      <!-- Right Container: Image -->
+      <div class="image-container" style="flex: 0.5; display: flex; justify-content: flex-start; align-items: flex-start;">
+        <img src="images/LincolnPark.png" loading="lazy" style="width: 77%;" alt="Lincoln Park Image">
+      </div>
+    </div>
+    <div class="button-container">
+      <a href="#" class="button-secondary w-button" onclick="history.back(); return false;">See another community</a>
+      <a href="#toulaine-section" class="button-secondary w-button">Apartment options</a>
+    </div>
+  </section>
+
+  
     <section id="toulaine-section" class="hero-heading-left">
       <div class="container-2">
         <div class="hero-wrapper-2">
+          <div class="button-container">
+            <a href="#" class="button-secondary w-button">See another Community</a>
+            <a href="#" class="button-secondary w-button">Another Apartment</a>
+          </div>
           <!-- Left Column: Text and Video -->
           <div class="left-column">
             <div class="text-content">
@@ -56,7 +69,7 @@
           <!-- Right Column: Image, Text, and Button -->
           <div class="right-column">
             <div class="recommendation-box">
-              <h2 class="recommendation-title">Renting Recommendation</h2>
+              <h2 class="recommendation-title">Unit Recommendations</h2>
               <img src="images/屏幕截图-2024-08-11-014635.png" loading="lazy" sizes="(max-width: 479px) 88vw, 307px" alt="" srcset="images/屏幕截图-2024-08-11-014635-p-500.png 500w, images/屏幕截图-2024-08-11-014635-p-800.png 800w, images/屏幕截图-2024-08-11-014635-p-1080.png 1080w, images/屏幕截图-2024-08-11-014635.png 1372w">
               <p class="image-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis</p>
               <a href="#more-info" class="button-primary-2 w-button">Get More Info</a>
@@ -66,14 +79,17 @@
       </div>
     </section>
     
-    <section id="more-info">
-      <div class="email-form-container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <section id="more-info" style="background-image: url('/test/part1/images/poi-p-800.png'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+      <div class="email-form-container" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: rgba(255, 255, 255, 0.45);">
+        
         <form class="email-form" style="text-align: center;" onsubmit="showLieMessage(event)">
           <input type="email" placeholder="Type your email" required style="padding: 10px; margin-right: 10px; width: 250px;">
-          <button type="submit" style="padding: 10px 20px; background-color: #fe7200; color: white; border: none; cursor: pointer;">Submit</button>
+          <button type="submit" style="padding: 10px 20px; background-color: #ffa14e; color: white; border: none; cursor: pointer;">Submit</button>
         </form>
       </div>
     </section>
+    
+    
     
     <section id="lie-message" style="display: none; background-color: black; color: white; height: 100vh; display: flex; justify-content: center; align-items: center; font-size: 5em; cursor: pointer; text-align: center;" onclick="navigateToIndex()">
       <span id="typed-text"></span>
