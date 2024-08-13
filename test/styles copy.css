@@ -20,11 +20,11 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   font-family: "Abril Fatface", cursive;
-  font-size: 2em;
+  font-size: 1.5em; /* Adjusted for better readability */
   color: #f2f2f2;
 }
+
 /* Navigation Styles */
-/* Vertical Timeline Navigation Styles */
 .timeline-navbar {
   position: fixed;
   top: 50%;
@@ -40,10 +40,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.timeline-links li {
-  display: block;
 }
 
 .timeline-links a {
@@ -63,21 +59,6 @@ body {
   padding-left: 10px;
 }
 
-.timeline-links a::before {
-  content: "•";
-  color: #f2f2f2;
-  opacity: 0.8;
-  font-size: 1.2em;
-  padding-right: 8px;
-  transition: color 0.3s ease;
-}
-
-.timeline-links a:hover::before {
-  color: #ffcc00;
-}
-
-
-
 .firstContainer {
   display: flex;
   flex-direction: column;
@@ -85,100 +66,97 @@ body {
   align-items: center;
   height: 100vh;
   background: rgb(0, 0, 0);
-  position: relative;
+  width: 100%;
+  padding: 10px;
 }
 
-.diagram-container {
-  position: relative;
+.firstContainer img {
+  width: 300px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  transform: translate(-50%, -50%) scale(0.5) rotate(10deg);
+  animation: fadeIn 0.5s;
+}
+
+.firstContainer img:hover {
+  z-index: 10;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.diagram-container,
+.globeContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: rgb(0, 0, 0);
-  font-family: "Abril Fatface", cursive;
-  font-size: 12;
-  font-style: italic;
-  color: #dad4d4;
-}
-/* Scroll Section and Background */
-/* Scroll Section Container */
-#scroll-section {
-  position: relative; /* Ensure the scroll section is positioned relative */
-  overflow: hidden; /* Prevent overflow issues */
+  background: #000;
+  width: 100%;
+  padding: 10px; /* Added padding for better spacing */
 }
 
-/* Background Layer */
+/* Scroll Section and Background */
+#scroll-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
 #background {
-  position: fixed; /* Fixed to stay in place during scrolling */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Cover the full viewport */
-  background-color: #000000; /* Background color */
-  z-index: -1; /* Ensure it stays behind all other elements */
+  height: 100vh;
+  background-color: #000000;
+  z-index: -1;
 }
 
-/* Graphs within the Scroll Section */
 #graphs {
-  position: sticky; /* Sticky to keep in view during scroll */
+  position: sticky;
   top: 0;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   width: 100%;
-  z-index: 1; /* Above background, below other content */
+  z-index: 1;
 }
 
 /* Individual Graph Containers */
 #graph-container > div {
   position: absolute;
-  inset: 0; /* Position to fill the entire graph container */
-  opacity: 0; /* Start with hidden graphs */
-  transition: opacity 0.5s ease-in-out; /* Smooth fade-in and fade-out */
-  z-index: 2; /* Above the graphs container */
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 2;
 }
 
 /* Text Containers within the Scroll Section */
 #text > div {
-  position: absolute;
-  inset: 0; /* Position to fill the entire text container */
-  opacity: 0; /* Start with hidden text */
-  transition: opacity 0.5s ease-in-out; /* Smooth fade-in and fade-out */
-  z-index: 3; /* Ensure it is above the graphs */
-}
-
-
-.graphs iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  border: none;
-  z-index: -1; /* Keeps the iframe behind other content */
-  display: none; /* Start with the iframe hidden */
-}
-/* Ensure Correct Structure */
-.step {
   position: relative;
-  margin-bottom: 2rem; /* Adjust to control the scroll offset */
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 3;
 }
 
-
-.spacer {
-  font-family: 'Reddit Mono';
-  margin-bottom: 2rem;
-}
-
+/* Spacer and Text Styling */
+.spacer,
 .spacer-header {
+  margin-bottom: 2rem;
   font-family: 'Reddit Mono';
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  padding: 10px; /* Added padding for better readability */
 }
 
-
-
 .customerjourney {
-  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -192,70 +170,46 @@ body {
 .journey-graph {
   max-width: 100%;
   max-height: 100vh;
-  width: auto;
-  height: auto;
-  position: static;
-  top: auto;
-  left: auto;
-  transform: none;
-  animation: none;
   object-fit: contain;
-}
-
-.globeContainer {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
-  background: rgb(0, 0, 0);
 }
 
 .globeContainer iframe {
   width: 80%;
-  height: 900px;
+  height: 80vh;
   border: none;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
   background-color: #000000;
   color: #ffffff;
   font-family: 'Helvetica Neue', sans-serif;
-  margin: 0;
-  padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   height: 100vh;
-  overflow: hidden;
 }
 
 .tabs-container {
   display: flex;
   justify-content: center;
-  width: 70%;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .tab {
   background-color: #1a1a1a;
   color: #fff;
-  padding: 15px 30px;
+  padding: 10px 20px; /* Adjusted padding */
   border-radius: 5px;
-  margin: 0 15px;
+  margin: 0 10px; /* Reduced margin */
   cursor: pointer;
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  font-weight: 300;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .tab:hover {
@@ -272,21 +226,18 @@ body {
 .panel.blue {
   background-color: #121212;
   color: #ffffff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
-  width: 70%;
-  position: relative;
-  display: none; /* Hidden by default */
+  width: 100%;
+  max-width: 1200px; /* Restrict the max width */
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 #animation-container {
-  width: 70%;
-  height: 400px;
+  width: 100%;
+  height: 300px; /* Reduced height */
   background-color: #1a1a1a;
   border-radius: 10px;
-  overflow: hidden;
-  position: relative;
   margin-bottom: 20px;
 }
 
@@ -294,98 +245,30 @@ body {
   margin-top: 20px;
 }
 
-.design-fiction {
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.design-fiction h3 {
-  margin-top: 0;
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 22px;
-}
-
-.design-fiction p {
-  margin: 10px 0;
-  font-size: 16px;
-  color: #b3b3b3;
-  line-height: 1.6;
-}
-
-.panel.blue::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  height: 5px;
-  width: 50px;
-  background-color: #007BFF;
-  border-radius: 5px;
-}
-
-.design-fiction:hover {
-  background-color: #292929;
-  transition: background-color 0.3s;
-}
-
 .lastContainer {
   background-color: #000000;
   color: white;
-  width: 300vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
-footer {
-  height: 60px;
-  background: lemonchiffon;
-}
-
-
-h1 {
-  opacity: 0.25;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-#artist_text, #streamers_text {
-  fill: rgb(243, 243, 243); /* Light grey color for the text */
-  font-size: 24px; /* Adjust font size as needed */
-  opacity: 0.25;
-  pointer-events: none;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tabs-container {
+    flex-direction: column;
+    width: 90%;
   }
-  100% {
-    opacity: 1;
+
+  .tab {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  #animation-container {
+    height: 200px;
   }
 }
-
-img {
-  width: 300px;
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  transform: translate(-50%, -50%) scale(0.5) rotate(10deg);
-  animation: fadeIn 0.5s;
-}
-
-img:hover {
-  z-index: 10;
-}
-
-
