@@ -210,9 +210,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-window.addEventListener('load', function() {
+document.addEventListener("DOMContentLoaded", function () {
   const highlights = document.querySelectorAll('.highlight');
+
+  const observerOptions = {
+    root: null, // viewport
+    rootMargin: '0px',
+    threshold: 0.1 // Trigger when 10% of the element is in view
+  };
+
+  const highlightObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target); // Stop observing once the animation is triggered
+      }
+    });
+  }, observerOptions);
+
   highlights.forEach(highlight => {
-    highlight.classList.add('animate');
+    highlightObserver.observe(highlight);
   });
 });
