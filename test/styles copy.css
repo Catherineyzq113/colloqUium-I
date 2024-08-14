@@ -43,7 +43,7 @@ body {
 
 .timeline-links a {
   font-family: inherit;
-  color: #cccccc; /* Darker text color */
+  color: #cccccc8e; /* Darker text color */
   text-decoration: none;
   padding: 8px;
   font-size: 1.2em; /* Larger font size */
@@ -88,7 +88,7 @@ body {
   padding: 10px;
   font-family: inherit;
   font-size: 1.2em; /* Larger font size */
-  color: #cccccc; /* Darker text color */
+  color: #cccccc75; /* Darker text color */
 }
 
 .firstContainer img {
@@ -472,7 +472,7 @@ body {
 }
 
 .conclusion-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin-bottom: 40px;
 }
 
@@ -500,25 +500,4 @@ animation: bounce 1s infinite; /* Simple bounce animation */
 50% {
   transform: translateY(10px);
 }
-}
-
-/* Conclusion Button */
-.conclusion-navigation {
-  margin-top: 40px;
-}
-
-.conclusion-button {
-  background-color: #fe7200; /* Orange background for the button */
-  color: #ffffff; /* White text */
-  padding: 15px 30px;
-  font-size: 1.2em;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.conclusion-button:hover {
-  background-color: #e05f00; /* Darker orange on hover */
 }
