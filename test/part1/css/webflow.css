@@ -80,7 +80,7 @@ html.w-mod-touch * {
 
 .button-container {
   position: absolute;
-  top: 190px;
+  top: 90px;
   right: 100px;
   display: flex;
   gap: 10px; /* Space between buttons */
@@ -144,8 +144,8 @@ video {
   flex-direction: column;
   align-items: left;
   justify-content: space-between; /* Ensure the button is at the bottom */
-  height: 50vh;
-  margin-top: 45%; /* Make the box take up the full height of the right column */
+  height: auto;
+  margin-top: 120px; /* Make the box take up the full height of the right column */
 }
 
 .recommendation-title {

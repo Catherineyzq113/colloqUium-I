@@ -329,7 +329,7 @@ a {
 .button {
   color: #fff;
   text-align: center;
-  background-color: #fc0a7e;
+  background-color: #FF6600;
   border-radius: 3px;
   margin-right: 0;
   padding: 20px 40px;
@@ -783,7 +783,7 @@ img2 {
 }
 
 .purple {
-  color: #b32e6e;
+  color: #FF6600;
 }
 
 .footer {
@@ -833,7 +833,7 @@ img2 {
   padding-left: 20px;
   padding-right: 0;
   transition: box-shadow .3s cubic-bezier(.215, .61, .355, 1);
-  box-shadow: inset 0 0 #fc0a7e;
+  box-shadow: inset 0 0 #FF6600;
 }
 
 .input:hover, .input:focus {
