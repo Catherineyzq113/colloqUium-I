@@ -13178,15 +13178,6 @@
         function removeMenuOpen(i, el) {
           el.removeAttribute("data-nav-menu-open");
         }
-
-        function toggleHelpBox(elementId) {
-          const element = document.getElementById(elementId);
-          if (element) {
-              element.classList.toggle('show');
-          } else {
-              console.error('Element not found:', elementId);
-          }
-      }
         function open(data, immediate) {
           if (data.open) {
             return;
