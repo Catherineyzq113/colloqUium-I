@@ -145,7 +145,7 @@ video {
   align-items: left;
   justify-content: space-between; /* Ensure the button is at the bottom */
   height: 50vh;
-  margin-top: 35%; /* Make the box take up the full height of the right column */
+  margin-top: 45%; /* Make the box take up the full height of the right column */
 }
 
 .recommendation-title {
