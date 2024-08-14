@@ -176,39 +176,53 @@ document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.querySelectorAll('.tab');
   const contentPanel = document.getElementById('content-panel');
   const infoContent = document.getElementById('info-content');
-
+  
   const tabContent = {
-    'tab1': `<div class="design-fiction">
-               <h3>TrustWeb: Blockchain-Enhanced Verification Network</h3>
-               <p><strong>Perspective:</strong> Technological Infrastructure</p>
-               <p><strong>How It Works:</strong> Every piece of digital content is cryptographically hashed and verified through a decentralized blockchain network. Users can easily check content authenticity via API or browser plugin.</p>
-             </div>`,
-    'tab2': `<div class="design-fiction">
-               <h3>EyeWitness: AI-Augmented Human Authentication</h3>
-               <p><strong>Perspective:</strong> Human-Centric Verification</p>
-               <p><strong>How It Works:</strong> Combines AI filtering with human expert analysis to verify suspicious content in real-time. Experts are incentivized through a reward system, improving the overall detection process.</p>
-             </div>`,
-    'tab3': `<div class="design-fiction">
-               <h3>VeriLens: Consumer-Based Smart Device Integration</h3>
-               <p><strong>Perspective:</strong> User-Centric Protection</p>
-               <p><strong>How It Works:</strong> Embedded in consumer devices, VeriLens performs real-time deepfake detection using edge AI. Users can flag suspicious content, contributing to a collective database for better detection.</p>
-             </div>`
+    'tab1': `
+      <div id="animation-container">
+        <img src="assets/images/contentauthenticityinitiative.png" alt="Content Authenticity Initiative" class="tab-image small-image">
+      </div>
+      <div class="design-fiction">
+        <h3>Ensuring Digital Integrity</h3>
+        <p>Digital content is cryptographically hashed and validated through a decentralized blockchain network. This initiative allows users to verify the authenticity of content via an API or browser plugin, ensuring that what they see is genuine and unaltered.</p>
+      </div>
+    `,
+'tab2': `
+  <div id="animation-container">
+    <img src="assets/images/nightshadeAI.png" alt="Nightshade AI" class="tab-image small-image">
+  </div>
+  <div class="design-fiction">
+    <h3>Advanced Threat Detection & Mitigation</h3>
+    <p>Nightshade AI utilizes cutting-edge machine learning algorithms to detect and mitigate cybersecurity threats in real-time. The system continuously analyzes network traffic and user behavior, automatically responding to potential threats before they can cause harm.</p>
+  </div>
+`,
+'tab3': `
+<div id="animation-container">
+  <img src="assets/images/face.png" alt="Minimalist Metal Mask" class="tab-image small-image">
+</div>
+<div class="design-fiction">
+  <h3>Merging Style with Functionality</h3>
+  <p>The Minimalist Brass Mask is designed to cover the wearer's face, preventing facial recognition software from identifying them. This mask is a direct response to the increasing prevalence of public surveillance, embodying both a functional purpose and a strong message against the erosion of personal privacy.</p>
+  </div>
+`
   };
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      contentPanel.style.display = 'block';
-      infoContent.style.opacity = '0';
-      
-      setTimeout(() => {
-        infoContent.innerHTML = tabContent[tab.id];
-        infoContent.style.opacity = '1';
-      }, 300); // Match this with the transition duration for smooth effect
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        contentPanel.style.display = 'block';
+        infoContent.style.opacity = '0';
+        
+        setTimeout(() => {
+          infoContent.innerHTML = tabContent[tab.id];
+          infoContent.style.opacity = '1';
+        }, 300);
+      });
     });
   });
-});
+  
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const highlights = document.querySelectorAll('.highlight');
@@ -232,3 +246,13 @@ document.addEventListener("DOMContentLoaded", function () {
     highlightObserver.observe(highlight);
   });
 });
+
+const style = document.createElement('style');
+style.textContent = `
+  .small-image {
+    width: auto;  /* 或者您想要的任何尺寸 */
+    height: 100%;  /* 保持宽高比 */
+    object-fit: contain;  /* 确保图片完全适应指定的尺寸 */
+  }
+`;
+document.head.appendChild(style);
